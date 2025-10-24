@@ -1,4 +1,5 @@
-Weather App 🌤️
+**Weather App 🌤️**
+
 A responsive **Weather Application** that provides current weather information for your location or any city worldwide. The app features **dynamic weather-based backgrounds**, **temperature toggle (°C/°F)**, and **animated weather effects** for an engaging user experience.
 
 ## **Features**
