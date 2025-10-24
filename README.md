@@ -90,11 +90,6 @@ weather-app/
 
 ---
 
-## **License**
-
-This project is **MIT licensed** – see the LICENSE file for details.
-
----
 
 ## **Acknowledgements**
 
