@@ -1,0 +1,300 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+  --colorDark1: #112D4E;
+  --colorDark2: #3F72AF;
+  --colorLight1: #DBE2EF;
+  --colorLight2: #F9F7F7;
+  --placeholderColor: #e0e0e0;
+}
+
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  color: var(--colorLight2);
+  background-image: linear-gradient(160deg, var(--colorDark1) 0%, var(--colorDark2) 100%);
+  transition: all 0.4s ease;
+  overflow-y: auto;
+  padding-bottom: 2rem;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* === Tabs Section === */
+.tab-container {
+  width: 90%;
+  max-width: 550px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab {
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 1.75px;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+}
+
+.tab.current-tab {
+  background-color: rgba(219, 226, 239, 0.4);
+  border-radius: 6px;
+}
+
+/* === Form/Search Bar === */
+.form-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 0.8rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container.active{
+    display: flex;
+}
+.form-container input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.form-container input::placeholder {
+  color: var(--placeholderColor);
+  opacity: 1;
+}
+
+/* Search button */
+.form-container .btn {
+  background-color: #4fc3f7;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+
+.form-container .btn:hover {
+  background-color: #29b6f6;
+}
+
+/* === Temperature Toggle === */
+.unit-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto 2rem;
+  gap: 0.5rem;
+}
+
+.unit-toggle button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.unit-toggle button.active {
+  background-color: #4fc3f7;
+  color: #112D4E;
+  font-weight: 600;
+}
+
+.unit-toggle button:hover {
+  background-color: #29b6f6;
+}
+
+/* === Weather Display === */
+.weather-container {
+  margin-block: 2rem;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.grant-location-container,
+.loading-container,
+.user-info-container,
+.error-container {
+  display: none;
+}
+
+.active {
+  display: flex !important;
+}
+
+.loading-container img {
+  margin-bottom: 1rem;
+}
+
+.user-info-container img[data-weatherIcon] {
+  width: 90px;
+  height: 90px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.name img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.parameter-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.parameter {
+  width: 30%;
+  max-width: 180px;
+  background-color: rgba(219, 226, 239, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.parameter:hover {
+  transform: scale(1.05);
+}
+
+.parameter img {
+  width: 50px;
+  height: 50px;
+}
+
+.parameter p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.parameter p:last-of-type {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+/* === Error Section === */
+.error-container img {
+  margin-bottom: 1rem;
+}
+.error-container p {
+  color: var(--colorLight2);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* === Responsiveness === */
+@media (max-width: 480px) {
+  .parameter {
+    width: 45%;
+  }
+
+  .unit-toggle button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .form-container {
+    max-width: 350px;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Temperature toggle button styling */
+#temp-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#temp-toggle:hover {
+    background-color: #4fc3f7;
+    color: #112D4E;
+    font-weight: 600;
+}
+/* Grant Location Container Styling */
+.grant-location-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* spacing between image, text, and button */
+    padding: 2rem 1rem;
+    margin: 8rem auto;
+    max-width: 300px; /* prevents it from stretching too wide */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.grant-location-container.active{
+    display: flex;
+}
+
+.grant-location-container p {
+    font-size: 0.95rem;
+    color: white;
+}
+
+.grant-location-container button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+}
+
