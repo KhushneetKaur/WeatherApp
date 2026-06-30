@@ -38,7 +38,7 @@ A responsive **Weather Application** that provides current weather information f
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/weatherapp.git
+git clone https://github.com/khushneetkaur/weatherapp.git
 ```
 
 2. Navigate to the project directory:
@@ -84,7 +84,7 @@ weather-app/
 
 * Add **7-day weather forecast**
 * Include **wind direction arrows**
-* Add **light/dark theme toggle** (optional)
+* Add **light/dark theme toggle** 
 * Improve **mobile animations and performance**
 * Deploy as a **live web app** using GitHub Pages or Netlify
 
